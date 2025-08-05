@@ -33,7 +33,7 @@ This portal serves as the **final delivery hub** for:
 
 This system replaced disconnected files and static planning templates with a **central, smart, user-friendly workspace** for recruiters and decision-makers.
 
-![Slate Portal Preview](Recruitment20%Portal.JPG)
+![Slate Portal Preview](Recruitment-Portal.JPG)
 
 ---
 ### 🛠️ Tools Used
