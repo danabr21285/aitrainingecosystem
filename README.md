@@ -2,6 +2,13 @@
 
 ### Overview
 This project summarizes a set of internal tools and resources I designed to improve training and strategic planning using AI, web technologies, and lightweight automation.
+
+## 🧠 Visual Overview
+
+This mind map shows how all parts of the recruitment planning system are connected, including AI tools, resources, and documentation.
+
+![NotebookLM Mind Map](images/notebooklm-mindmap.png)
+
 ---
 ### 🛠️ Tools Used
 
