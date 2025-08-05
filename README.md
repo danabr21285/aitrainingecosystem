@@ -14,18 +14,41 @@ This mind map shows how all parts of the recruitment planning system are connect
 
 ![NotebookLM Mind Map](Recruitment%20Visits%20Mind%20Map.png) 
 
+## 🧭 Multi-Campus HTML Portal with Dynamic Tabs (Slate CRM Integration)
+
+To support strategic planning across multiple campuses and programs, I built a modular, HTML-based portal embedded directly in our Slate CRM environment.
+
+This portal serves as the **final delivery hub** for:
+- Finalized recruitment plans
+- Live admissions and event conversion dashboards
+- Embedded CRM reports segmented by campus and program
+- Interactive guidance via the Recruitie AI assistant
+
+### 🧩 Portal Architecture Highlights:
+- 🔄 **Tabbed Navigation** with JavaScript-controlled dynamic content loading
+- 🏫 Campus-specific tabs: PCOM, PCOM Georgia, PCOM South Georgia
+- 📊 Embedded Dashboards: admissions metrics, event counts, yield rates
+- 🧠 Integrated AI: “Chat with Recruitie” for real-time strategy support
+- 🛠️ Hosted securely inside Slate with full role-based access
+
+This system replaced disconnected files and static planning templates with a **central, smart, user-friendly workspace** for recruiters and decision-makers.
+
+![Slate Portal Preview](images/slate-portal-preview.png)
+
 ---
 ### 🛠️ Tools Used
 
 - OpenAI (GPT-4, prompt engineering)
 
-- Slate CRM (bot integration)
+- Slate CRM (bot integration) (portal intergration) 
 
 - NotebookLM (Google AI assistant)
 
 - Google Vids + Canva (video production)
 
-- HTML, GitHub Pages (interactive documentation)
+- HTML, CSS, JavaScript,  GitHub Pages (interactive documentation)
+
+- Dybamic tab content loading 
 
 - Google Sites (resource organization)
 ---
@@ -36,7 +59,8 @@ This mind map shows how all parts of the recruitment planning system are connect
 | NotebookLM Training | Structured AI notebooks that guide staff through interconnected planning concepts. |
 | Training Videos     | Short walkthroughs using Google Vids to onboard new users and support just-in-time learning. |
 | GitHub Pages Site   | HTML-based instructional hub with modular guidance for recruitment-related tasks. |
-| Google Sites Portal | Centralized hub for all recruitment plans and tools (internal-only). |
+| Google Sites        | Centralized hub for all recruitment plans and tools (internal-only). |
+| CRM Portal          | Replaced Google sites as the centralized hub for all recruitment plans, reports and dashboards (internal-only). |
 ---
 ### 🎯 Skills Demonstrated
 
