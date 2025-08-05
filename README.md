@@ -3,6 +3,11 @@
 ### Overview
 This project summarizes a set of internal tools and resources I designed to improve training and strategic planning using AI, web technologies, and lightweight automation.
 
+## 🎥 Recruitie in Action
+Here's a short demo of the internal AI assistant I built to help recruiters generate and structure recruitment plans directly in our CRM environment.
+
+![Recruitie Demo](images/recruitie-demo.gif)
+
 ## 🧠 Visual Overview
 
 This mind map shows how all parts of the recruitment planning system are connected, including AI tools, resources, and documentation.
