@@ -33,6 +33,7 @@ This portal serves as the **final delivery hub** for:
 
 This system replaced Gsites with a **central, smart, user-friendly workspace** for recruiters and decision-makers.
 
+⚠️ Sensitive content has been blurred for privacy.
 ![Slate Portal Preview](slate-portal-preview.png) 
 
 ---
