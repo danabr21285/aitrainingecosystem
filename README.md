@@ -26,14 +26,14 @@ This portal serves as the **final delivery hub** for:
 
 ### 🧩 Portal Architecture Highlights:
 - 🔄 **Tabbed Navigation** with JavaScript-controlled dynamic content loading
-- 🏫 Campus-specific tabs: PCOM, PCOM Georgia, PCOM South Georgia
-- 📊 Embedded Dashboards: admissions metrics, event counts, yield rates
+- 🏫 Campus-specific tabs: Campus1, Campus2, Campus3, Dashboards 
+- 📊 Embedded Dashboards: admissions metrics, event counts, yield rates, Tableau 
 - 🧠 Integrated AI: “Chat with Recruitie” for real-time strategy support
 - 🛠️ Hosted securely inside Slate with full role-based access
 
-This system replaced disconnected files and static planning templates with a **central, smart, user-friendly workspace** for recruiters and decision-makers.
+This system replaced Gsites with a **central, smart, user-friendly workspace** for recruiters and decision-makers.
 
-![Slate Portal Preview](slate%20portal%20preview.PNG)
+![Slate Portal Preview](slate%20portal%20Mpreview.png) 
 
 ---
 ### 🛠️ Tools Used
