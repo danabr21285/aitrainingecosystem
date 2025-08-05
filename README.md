@@ -6,7 +6,7 @@ This project summarizes a set of internal tools and resources I designed to impr
 ## 🎥 Recruitie in Action
 Here's a short demo of the internal AI assistant I built to help recruiters generate and structure recruitment plans directly in our CRM environment.
 
-![Recruitie Demo](Recruitie20%Gif.gif)
+![Recruitie Demo](Recruitie%20Gif.gif)
 
 ## 🧠 Visual Overview
 
