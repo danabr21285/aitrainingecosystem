@@ -7,7 +7,7 @@ This project summarizes a set of internal tools and resources I designed to impr
 
 This mind map shows how all parts of the recruitment planning system are connected, including AI tools, resources, and documentation.
 
-![NotebookLM Mind Map](images/Recruitment Visits Mind Map.png)
+![NotebookLM Mind Map](Recruitment Visits Mind Map.png)
 
 ---
 ### 🛠️ Tools Used
