@@ -3,20 +3,9 @@
 ### Overview
 This project summarizes a set of internal tools and resources I designed to improve training and strategic planning using AI, web technologies, and lightweight automation.
 
-## 🎥 Recruitie in Action
-Here's a short demo of the internal AI assistant I built to help recruiters generate and structure recruitment plans directly in our CRM environment.
+## 🧭 Multi-Campus HTML Portal with Dynamic Tabs (CRM Integration)
 
-![Recruitie Demo](Recruitie-Gif.gif)
-
-## 🧠 Visual Overview
-
-This mind map shows how all parts of the recruitment planning system are connected, including AI tools, resources, and documentation.
-
-![NotebookLM Mind Map](Recruitment%20Visits%20Mind%20Map.png) 
-
-## 🧭 Multi-Campus HTML Portal with Dynamic Tabs (Slate CRM Integration)
-
-To support strategic planning across multiple campuses and programs, I built a modular, HTML-based portal embedded directly in our Slate CRM environment.
+To support strategic planning across multiple campuses and programs, I built a modular, HTML-based portal embedded directly in a CRM environment.
 
 This portal serves as the **final delivery hub** for:
 - Finalized recruitment plans
@@ -29,19 +18,16 @@ This portal serves as the **final delivery hub** for:
 - 🏫 Campus-specific tabs: Campus1, Campus2, Campus3, Dashboards 
 - 📊 Embedded Dashboards: admissions metrics, event counts, yield rates, Tableau 
 - 🧠 Integrated AI: “Chat with Recruitie” for real-time strategy support
-- 🛠️ Hosted securely inside Slate with full role-based access
+- 🛠️ Hosted securely inside CRM with full role-based access
 
 This system replaced Gsites with a **central, smart, user-friendly workspace** for recruiters and decision-makers.
-
-⚠️ Sensitive content has been blurred for privacy.
-![Slate Portal Preview](slate-portal-preview.png) 
 
 ---
 ### 🛠️ Tools Used
 
 - OpenAI (GPT-4, prompt engineering)
 
-- Slate CRM (bot integration) (portal intergration) 
+- CRM (bot integration) (portal intergration) 
 
 - NotebookLM (Google AI assistant)
 
