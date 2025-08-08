@@ -3,24 +3,24 @@
 ### Overview
 This project summarizes a set of internal tools and resources I designed to improve training and strategic planning using AI, web technologies, and lightweight automation.
 
-## 🧭 Multi-Campus HTML Portal with Dynamic Tabs (CRM Integration)
+## 🧭 Multi-Location HTML Portal with Dynamic Tabs (CRM Integration)
 
-To support strategic planning across multiple campuses and programs, I built a modular, HTML-based portal embedded directly in a CRM environment.
+To support strategic planning across multiple locations, I built a modular, HTML-based portal embedded directly in a CRM environment.
 
 This portal serves as the **final delivery hub** for:
-- Finalized recruitment plans
-- Live admissions and event conversion dashboards
-- Embedded CRM reports segmented by campus and program
-- Interactive guidance via the Recruitie AI assistant
+- Finalized strategic plans
+- Live stats and event conversion dashboards
+- Embedded CRM reports segmented by location and segment markets
+- Interactive guidance via an AI assistant
 
 ### 🧩 Portal Architecture Highlights:
 - 🔄 **Tabbed Navigation** with JavaScript-controlled dynamic content loading
-- 🏫 Campus-specific tabs: Campus1, Campus2, Campus3, Dashboards 
-- 📊 Embedded Dashboards: admissions metrics, event counts, yield rates, Tableau 
-- 🧠 Integrated AI: “Chat with Recruitie” for real-time strategy support
-- 🛠️ Hosted securely inside CRM with full role-based access
+- 🛠️ Location-specific tabs: Campus1, Campus2, Campus3, Dashboards 
+- 📊 Embedded Dashboards: metrics, event counts, yield rates, Tableau 
+- 🧠 Integrated AI: “Chat with Planning Assistant” for real-time strategy support
+- 🛠️ Hosted securely inside a CRM with full role-based access
 
-This system replaced Gsites with a **central, smart, user-friendly workspace** for recruiters and decision-makers.
+This system replaced Gsites with a **central, smart, user-friendly workspace** for staff and decision-makers.
 
 ---
 ### 🛠️ Tools Used
@@ -42,12 +42,12 @@ This system replaced Gsites with a **central, smart, user-friendly workspace** f
 ### 📚 Project Components
 | Component            | Description |
 |---------------------|-------------|
-| Recruitie (AI Bot)  | Internal CRM-integrated AI assistant that helps recruiters build data-informed recruitment plans through prompt-based interactions. |
+| AI Bot              | Internal CRM-integrated AI assistant that helps ataff build data-informed plans through prompt-based interactions. |
 | NotebookLM Training | Structured AI notebooks that guide staff through interconnected planning concepts. |
 | Training Videos     | Short walkthroughs using Google Vids to onboard new users and support just-in-time learning. |
-| GitHub Pages Site   | HTML-based instructional hub with modular guidance for recruitment-related tasks. |
-| Google Sites        | Centralized hub for all recruitment plans and tools (internal-only). |
-| CRM Portal          | Replaced Google sites as the centralized hub for all recruitment plans, reports and dashboards (internal-only). |
+| GitHub Pages Site   | HTML-based instructional hub with modular guidance for planning-related tasks. |
+| Google Sites        | Centralized hub for all business plans and tools (internal-only). |
+| CRM Portal          | Replaced Google sites as the centralized hub for all business plans, reports and dashboards (internal-only). |
 ---
 ### 🎯 Skills Demonstrated
 
