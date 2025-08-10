@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI-Powered Training & Onboarding Portal</title>
+  <style>
+    :root{
+      --bg: #0b0c0f; /* dark by default for eye comfort */
+      --panel: #14161b;
+      --text: #e9edf1;
+      --muted: #9aa4b2;
+      --brand: #6ee7b7; /* mint */
+      --brand-2: #60a5fa; /* blue */
+      --accent: #fbbf24; /* amber */
+      --danger: #ef4444;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --border: 1px solid rgba(255,255,255,.08);
+    }
+    [data-theme="light"]{
+      --bg:#f7fafc; --panel:#ffffff; --text:#0b0c0f; --muted:#4b5563; --border:1px solid rgba(0,0,0,.08);
+    }
+    html,body{height:100%;}
+    body{margin:0;background:var(--bg);color:var(--text);font:500 16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;}
+    .container{max-width:1200px;margin:0 auto;padding:24px;}
+    header{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand h1{font-size:20px;margin:0}
+    .tag{font-size:12px;color:var(--bg);background:linear-gradient(90deg,var(--brand),var(--brand-2));padding:6px 10px;border-radius:999px;font-weight:700}
+    .controls{display:flex;gap:10px;align-items:center}
+    .select, .btn, .input, .textarea{
+      background:var(--panel);color:var(--text);border:var(--border);border-radius:12px;padding:10px 12px;
+    }
+    .btn{cursor:pointer;box-shadow:var(--shadow);border:none}
+    .btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#081018;font-weight:800}
+    .btn.ghost{background:transparent;border:var(--border)}
+    .layout{display:grid;grid-template-columns:260px 1fr;gap:18px}
+    @media (max-width: 900px){.layout{grid-template-columns:1fr}}
+    nav{
+      position:sticky;top:18px;
+      background:var(--panel);border:var(--border);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)
+    }
+    .nav-title{font-weight:800;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:2px 0 12px}
+    .tabs{display:grid;gap:6px}
+    .tab{
+      display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;cursor:pointer;
+      border:var(--border);background:transparent
+    }
+    .tab[aria-selected="true"], .tab:hover{background:rgba(255,255,255,.06)}
+    .tab .dot{width:10px;height:10px;border-radius:999px;background:var(--muted)}
+    .tab[data-section="dashboards"] .dot{background:var(--brand-2)}
+    .tab[data-section="training"] .dot{background:var(--accent)}
+    .tab[data-section="docs"] .dot{background:#a78bfa}
+    .tab[data-section="assistant"] .dot{background:var(--brand)}
+
+    main{min-height:60vh}
+    .panel{background:var(--panel);border:var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .panel h2{margin:0 0 12px}
+    .grid{display:grid;gap:16px}
+    .grid.cols-2{grid-template-columns:1fr 1fr}
+    @media (max-width: 900px){.grid.cols-2{grid-template-columns:1fr}}
+    .kpi{display:grid;gap:6px;background:rgba(255,255,255,.03);border-radius:12px;padding:12px;border:var(--border)}
+    .kpi .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+    .kpi .value{font:800 22px/1.2 system-ui}
+
+    .iframe-wrap{position:relative;border-radius:12px;overflow:hidden;border:var(--border)}
+    .iframe-wrap::after{content:"Add your dashboard embed URL in data/ or replace src=";position:absolute;inset:auto 8px 8px 8px;color:var(--muted);font-size:12px;text-align:right}
+    iframe{width:100%;height:380px;border:0;background:#0b0c0f}
+
+    .video-card{display:flex;gap:12px;align-items:center;border:var(--border);border-radius:12px;padding:12px}
+    .video-thumb{width:140px;height:84px;background:rgba(255,255,255,.06);border-radius:8px;display:grid;place-items:center;color:var(--muted);font-weight:700}
+
+    .assistant{display:grid;gap:14px}
+    .textarea{min-height:110px;resize:vertical}
+    .log{white-space:pre-wrap;background:rgba(255,255,255,.03);padding:12px;border-radius:12px;border:var(--border);max-height:220px;overflow:auto}
+    .pill{display:inline-block;padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.08);font-size:12px;color:var(--muted)}
+    footer{margin:30px 0 10px;color:var(--muted);font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="container" id="app">
+    <header>
+      <div class="brand" aria-label="Project title">
+        <span class="tag" aria-hidden="true">Distributed Teams</span>
+        <h1>AI‑Powered Training & Onboarding Portal</h1>
+      </div>
+      <div class="controls" role="group" aria-label="Global controls">
+        <label class="pill" for="location">Location</label>
+        <select class="select" id="location" aria-label="Select location">
+          <option value="A">Location A</option>
+          <option value="B">Location B</option>
+          <option value="C">Location C</option>
+        </select>
+        <button class="btn ghost" id="themeBtn" aria-pressed="false" aria-label="Toggle theme">🌗 Theme</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav aria-label="Primary">
+        <div class="nav-title">Workspace</div>
+        <div class="tabs" role="tablist" aria-orientation="vertical">
+          <button class="tab" role="tab" aria-selected="true" data-section="dashboards" id="tab-dashboards">
+            <span class="dot" aria-hidden="true"></span>
+            <span>Dashboards</span>
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-section="training" id="tab-training">
+            <span class="dot" aria-hidden="true"></span>
+            <span>Training</span>
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-section="docs" id="tab-docs">
+            <span class="dot" aria-hidden="true"></span>
+            <span>Docs</span>
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-section="assistant" id="tab-assistant">
+            <span class="dot" aria-hidden="true"></span>
+            <span>AI Assistant</span>
+          </button>
+        </div>
+      </nav>
+
+      <main>
+        <!-- Dashboards -->
+        <section class="panel" role="tabpanel" aria-labelledby="tab-dashboards" id="dashboards">
+          <h2>KPIs & Dashboards — <span id="locLabel">Location A</span></h2>
+          <div class="grid cols-2" style="margin-top:12px">
+            <div class="kpi"><div class="label">Active Users</div><div class="value" id="kpiUsers">—</div></div>
+            <div class="kpi"><div class="label">Satisfaction</div><div class="value" id="kpiSat">—</div></div>
+          </div>
+          <div class="iframe-wrap" style="margin-top:14px">
+            <!-- Replace src with your Tableau/Looker/PowerBI embed URL -->
+            <iframe id="dashFrame" title="Dashboard embed" src="about:blank" loading="lazy"></iframe>
+          </div>
+        </section>
+
+        <!-- Training -->
+        <section class="panel" role="tabpanel" aria-labelledby="tab-training" id="training" hidden>
+          <h2>Training Hub — <span id="locLabel2">Location A</span></h2>
+          <p class="pill" style="margin:6px 0 14px">Multiple learning formats: video • step‑by‑step • interactive</p>
+          <div class="video-card">
+            <div class="video-thumb" aria-hidden="true">1280×720</div>
+            <div>
+              <strong>Quick Start (5 min)</strong>
+              <p class="muted">A short walkthrough covering navigation, role-based access, and where to find KPIs.</p>
+              <button class="btn" onclick="alert('Replace with a real video URL or local file.')">▶︎ Watch</button>
+            </div>
+          </div>
+          <div class="video-card">
+            <div class="video-thumb" aria-hidden="true">1280×720</div>
+            <div>
+              <strong>Deep Dive: Dashboards (12 min)</strong>
+              <p class="muted">Learn how to filter, export, and interpret each dashboard widget.</p>
+              <button class="btn" onclick="alert('Replace with a real video URL or local file.')">▶︎ Watch</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Docs -->
+        <section class="panel" role="tabpanel" aria-labelledby="tab-docs" id="docs" hidden>
+          <h2>Documentation — <span id="locLabel3">Location A</span></h2>
+          <div class="grid">
+            <div>
+              <h3>Playbooks</h3>
+              <ul>
+                <li><a href="#" onclick="alert('Replace with playbook URL or file.')">Incident Response SOP</a></li>
+                <li><a href="#" onclick="alert('Replace with playbook URL or file.')">Quarterly Planning Guide</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3>How‑tos</h3>
+              <ul>
+                <li>Export a KPI snapshot for your region</li>
+                <li>Submit a change request</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Assistant -->
+        <section class="panel" role="tabpanel" aria-labelledby="tab-assistant" id="assistant" hidden>
+          <h2>AI Assistant — <span id="locLabel4">Location A</span></h2>
+          <div class="assistant">
+            <label for="prompt" class="pill">Ask a question or paste a task</label>
+            <textarea id="prompt" class="textarea" placeholder="e.g., Summarize top 3 risks this week and suggest actions."></textarea>
+            <div class="controls">
+              <label for="temp">Tone</label>
+              <select id="temp" class="select" aria-label="Tone">
+                <option value="neutral">Neutral</option>
+                <option value="executive">Executive</option>
+                <option value="coaching">Coaching</option>
+              </select>
+              <button id="run" class="btn primary">Generate</button>
+            </div>
+            <div id="output" class="log" aria-live="polite">The assistant will respond here. For a real model, connect an API in the code comments.</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      Built as a static demo (no backend required). Replace placeholder URLs with your own assets or hook up an API for live AI.
+    </footer>
+  </div>
+
+  <script>
+    // --- Demo data (would normally come from a JSON file or API) ---
+    const DATA = {
+      locations: {
+        A: { label: 'Location A', users: 1280, sat: 4.6, dashboardUrl: 'about:blank' },
+        B: { label: 'Location B', users: 820, sat: 4.2, dashboardUrl: 'about:blank' },
+        C: { label: 'Location C', users: 1560, sat: 4.8, dashboardUrl: 'about:blank' },
+      }
+    };
+
+    // --- Theme toggle with localStorage ---
+    const themeBtn = document.getElementById('themeBtn');
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    themeBtn.setAttribute('aria-pressed', savedTheme === 'light');
+    themeBtn.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      themeBtn.setAttribute('aria-pressed', next === 'light');
+    });
+
+    // --- Tabs (accessible) ---
+    const sections = ['dashboards','training','docs','assistant'];
+    const tabButtons = document.querySelectorAll('.tab');
+    tabButtons.forEach(btn => btn.addEventListener('click', () => selectTab(btn.dataset.section)));
+
+    function selectTab(id){
+      sections.forEach(sec => {
+        const panel = document.getElementById(sec);
+        const tab = document.querySelector(`.tab[data-section="${sec}"]`);
+        const selected = sec === id;
+        panel.hidden = !selected;
+        tab.setAttribute('aria-selected', String(selected));
+      });
+    }
+
+    // Keyboard nav for tabs
+    document.querySelector('[role="tablist"]').addEventListener('keydown', (e) => {
+      const current = document.activeElement.closest('.tab');
+      if(!current) return;
+      const idx = Array.from(tabButtons).indexOf(current);
+      if(e.key === 'ArrowDown' || e.key === 'ArrowRight'){
+        const next = tabButtons[(idx+1)%tabButtons.length]; next.focus();
+      } else if(e.key === 'ArrowUp' || e.key === 'ArrowLeft'){
+        const prev = tabButtons[(idx-1+tabButtons.length)%tabButtons.length]; prev.focus();
+      } else if(e.key === 'Enter' || e.key === ' '){ current.click(); }
+    });
+
+    // --- Location switching ---
+    const locSelect = document.getElementById('location');
+    const labels = ['locLabel','locLabel2','locLabel3','locLabel4'];
+    locSelect.addEventListener('change', () => applyLocation(locSelect.value));
+
+    function applyLocation(key){
+      const loc = DATA.locations[key];
+      labels.forEach(id => document.getElementById(id).textContent = loc.label);
+      document.getElementById('kpiUsers').textContent = loc.users.toLocaleString();
+      document.getElementById('kpiSat').textContent = `${loc.sat.toFixed(1)} / 5.0`;
+      document.getElementById('dashFrame').src = loc.dashboardUrl;
+    }
+
+    // init
+    applyLocation('A');
+
+    // --- Assistant (mock, no backend) ---
+    const runBtn = document.getElementById('run');
+    runBtn.addEventListener('click', () => {
+      const key = locSelect.value; const loc = DATA.locations[key];
+      const tone = document.getElementById('temp').value;
+      const prompt = (document.getElementById('prompt').value || '').trim();
+      const base = `Summary for ${loc.label}: Active users ${loc.users}, satisfaction ${loc.sat.toFixed(1)}.\n`;
+      const toneLine = tone === 'executive' ? 'Action: focus on high-impact items for this quarter.'
+                      : tone === 'coaching' ? 'Action: small weekly improvements compounded over time will move the KPI.'
+                      : 'Action: review the dashboard and align on next steps.';
+      const echo = prompt ? `\nYou asked: "${prompt}"` : '';
+      const recs = `\nRecommendations:\n• Prioritize top 3 blockers.\n• Capture a KPI snapshot after changes.\n• Share update in the portal.`;
+      document.getElementById('output').textContent = base + toneLine + echo + recs + "\n\n(Connect a real model by calling your API in this handler.)";
+    });
+  </script>
+</body>
+</html
