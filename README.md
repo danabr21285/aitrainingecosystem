@@ -1,63 +1,70 @@
-### 📂 AI-Powered Training & Onboarding System
+### 📂 AI-Powered Training & Onboarding System for Distributed Teams
 
 ### Overview
-This project summarizes a set of internal tools and resources I designed to improve training and strategic planning using AI, web technologies, and lightweight automation.
-
-## 🧭 Multi-Location HTML Portal with Dynamic Tabs (CRM Integration)
-
-To support strategic planning across multiple locations, I built a modular, HTML-based portal embedded directly in a CRM environment.
-
-This portal serves as the **final delivery hub** for:
-- Finalized strategic plans
-- Live stats and event conversion dashboards
-- Embedded CRM reports segmented by location and segment markets
-- Interactive guidance via an AI assistant
-
-### 🧩 Portal Architecture Highlights:
-- 🔄 **Tabbed Navigation** with JavaScript-controlled dynamic content loading
-- 🛠️ Location-specific tabs: Campus1, Campus2, Campus3, Dashboards 
-- 📊 Embedded Dashboards: metrics, event counts, yield rates, Tableau 
-- 🧠 Integrated AI: “Chat with Planning Assistant” for real-time strategy support
-- 🛠️ Hosted securely inside a CRM with full role-based access
-
-This system replaced Gsites with a **central, smart, user-friendly workspace** for staff and decision-makers.
+This project demonstrates how AI, web technologies, and lightweight automation can be combined to streamline **training, onboarding, and strategic planning** for large projects involving **teams across multiple locations**.  
+The goal: create a **centralized, smart, user-friendly workspace** that’s accessible, engaging, and effective for team members with **different learning styles**.
 
 ---
-### 🛠️ Tools Used
 
-- OpenAI (GPT-4, prompt engineering)
+## 🌐 Multi-Location Training & Resource Portal
 
-- CRM (bot integration) (portal intergration) 
+I designed a modular, HTML-based portal as the **primary delivery hub** for:
+- Strategic plans and operational playbooks
+- Live dashboards and performance metrics
+- Location-specific resources and updates
+- AI-powered interactive guidance
 
-- NotebookLM (Google AI assistant)
+The portal supports **asynchronous collaboration**, ensuring everyone—regardless of location, role, or preferred learning format—can access the same up-to-date materials.
 
-- Google Vids + Canva (video production)
-
-- HTML, CSS, JavaScript,  GitHub Pages (interactive documentation)
-
-- Dybamic tab content loading 
-
-- Google Sites (resource organization)
 ---
-### 📚 Project Components
-| Component            | Description |
-|---------------------|-------------|
-| AI Bot              | Internal CRM-integrated AI assistant that helps ataff build data-informed plans through prompt-based interactions. |
-| NotebookLM Training | Structured AI notebooks that guide staff through interconnected planning concepts. |
-| Training Videos     | Short walkthroughs using Google Vids to onboard new users and support just-in-time learning. |
-| GitHub Pages Site   | HTML-based instructional hub with modular guidance for planning-related tasks. |
-| Google Sites        | Centralized hub for all business plans and tools (internal-only). |
-| CRM Portal          | Replaced Google sites as the centralized hub for all business plans, reports and dashboards (internal-only). |
+
+### 🧩 Portal Architecture Highlights
+- 🔄 **Tabbed Navigation** with JavaScript-controlled dynamic content loading  
+- 🗂 **Location-specific sections** for tailored materials (e.g., Region A, Region B, Region C, Company-wide Dashboards)  
+- 📊 **Embedded visual dashboards** for KPIs, timelines, and resource tracking  
+- 🧠 **Integrated AI Assistant** for real-time Q&A, decision support, and workflow guidance  
+- 🌍 **Cloud-hosted and role-based access** for security and version control
+
+This system replaced scattered tools and manual sharing with a **centralized, scalable, and consistent experience** for all users.
+
 ---
-### 🎯 Skills Demonstrated
 
-- Strategic training system design
+## 🛠️ Tools & Technologies
+- **OpenAI (GPT-4)** — prompt engineering and AI interaction design
+- **NotebookLM** — structured AI notebooks for step-by-step training
+- **Google Vids + Canva** — video production for visual learners
+- **HTML, CSS, JavaScript** — portal and interactive documentation
+- **GitHub Pages** — hosting for public or internal-facing resources
+- **Dynamic content loading** — modular, low-maintenance architecture
+- **Google Sites** — legacy content migration and archiving
 
-- Prompt engineering & AI tool building
-
-- Data-driven planning workflows
-
-- Cross-functional documentation
-
-- Scalable enablement tools
 ---
+
+## 📚 Project Components
+
+| Component           | Purpose |
+|---------------------|---------|
+| **AI Assistant**    | Helps staff and stakeholders create data-informed strategies through prompt-driven interactions |
+| **NotebookLM Modules** | Interactive, AI-guided training materials that connect concepts into a clear learning pathway |
+| **Training Videos** | Short, focused walkthroughs for just-in-time learning |
+| **HTML Documentation Hub** | Modular, role-based guidance for common workflows |
+| **Visual Dashboards** | Embedded, location-specific performance metrics for quick reference |
+| **Central Resource Hub** | One-stop access to strategic plans, KPIs, training materials, and support tools |
+
+---
+
+## 🎯 Skills Demonstrated
+- Scalable training system design for distributed teams
+- Prompt engineering and AI workflow integration
+- Data-informed strategic planning
+- Cross-functional, multi-format documentation
+- Designing resources for multiple learning preferences (visual, written, interactive)
+
+---
+
+## 💡 Why It Works for Distributed Teams
+- **One source of truth** — eliminates confusion from multiple outdated copies of documents
+- **Multi-format content** — supports visual, auditory, and kinesthetic learning styles
+- **Real-time updates** — ensures all locations work from the latest materials
+- **AI assistance** — reduces training time and supports self-service problem solving
+- **Modular design** — easy to adapt for new locations or initiatives
