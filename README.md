@@ -5,6 +5,9 @@ This project demonstrates how AI, web technologies, and lightweight automation c
 The goal: create a **centralized, smart, user-friendly workspace** that’s accessible, engaging, and effective for team members with **different learning styles**.
 
 ---
+[![AI Training Portal – preview](Training.png)](https://danabr21285.github.io/aitrainingecosystem/)
+
+---
 
 ## 🌐 Multi-Location Training & Resource Portal
 
