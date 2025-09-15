@@ -128,47 +128,15 @@
             <div class="kpi"><div class="label">Satisfaction</div><div class="value" id="kpiSat">—</div></div>
           </div>
           <div class="iframe-wrap" style="margin-top:14px">
-            <div class='tableauPlaceholder' id='viz1757959192034' style='position: relative'>
-    <noscript>
-      <a href='#'>
-        <img alt=' ' src='https://public.tableau.com/static/images/Co/CoffeeChainSalesDashboard_17563906444210/Dashboard1/1_rss.png' style='border: none' />
-      </a>
-    </noscript>
-    <object class='tableauViz'  style='display:none;'>
-      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-      <param name='embed_code_version' value='3' />
-      <param name='site_root' value='' />
-      <param name='name' value='CoffeeChainSalesDashboard_17563906444210/Dashboard1' />
-      <param name='tabs' value='yes' />
-      <param name='toolbar' value='yes' />
-      <param name='static_image' value='https://public.tableau.com/static/images/Co/CoffeeChainSalesDashboard_17563906444210/Dashboard1/1.png' />
-      <param name='animate_transition' value='yes' />
-      <param name='display_static_image' value='yes' />
-      <param name='display_spinner' value='yes' />
-      <param name='display_overlay' value='yes' />
-      <param name='display_count' value='yes' />
-      <param name='language' value='en-US' />
-    </object>
-  </div>
-  <script type='text/javascript'>
-    var divElement = document.getElementById('viz1757959192034');
-    var vizElement = divElement.getElementsByTagName('object')[0];
-    if ( divElement.offsetWidth > 800 ) {
-      vizElement.style.minWidth='1000px';vizElement.style.maxWidth='100%';
-      vizElement.style.minHeight='850px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';
-    } else if ( divElement.offsetWidth > 500 ) {
-      vizElement.style.minWidth='1000px';vizElement.style.maxWidth='100%';
-      vizElement.style.minHeight='850px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';
-    } else {
-      vizElement.style.width='100%';vizElement.style.minHeight='1350px';
-      vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';
-    }
-    var scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-  </script>
-  <!-- Tableau embed code END -->
-</div>
+            <iframe id="dashFrame"
+              src="https://public.tableau.com/views/CoffeeChainSalesDashboard_17563906444210/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+              title="Dashboard"
+              width="100%"
+              height="380"
+              frameborder="0"
+              allowfullscreen
+              style="background:#0b0c0f; border-radius:12px; border:var(--border);"></iframe>
+          </div>
         </section>
 
         <!-- Training -->
@@ -244,9 +212,9 @@
     // --- Demo data (would normally come from a JSON file or API) ---
     const DATA = {
       locations: {
-        A: { label: 'Location A', users: 1280, sat: 4.6, dashboardUrl: 'about:blank' },
-        B: { label: 'Location B', users: 820, sat: 4.2, dashboardUrl: 'about:blank' },
-        C: { label: 'Location C', users: 1560, sat: 4.8, dashboardUrl: 'about:blank' },
+        A: { label: 'Location A', users: 1280, sat: 4.6, dashboardUrl: 'https://public.tableau.com/views/CoffeeChainSalesDashboard_17563906444210/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link' },
+        B: { label: 'Location B', users: 820, sat: 4.2, dashboardUrl: 'https://public.tableau.com/views/CoffeeChainSalesDashboard_17563906444210/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link' },
+        C: { label: 'Location C', users: 1560, sat: 4.8, dashboardUrl: 'https://public.tableau.com/views/CoffeeChainSalesDashboard_17563906444210/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link' },
       }
     };
 
@@ -322,6 +290,5 @@
     });
   </script>
 </body>
-
-</html
+</html>
 
