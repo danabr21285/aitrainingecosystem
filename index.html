@@ -123,21 +123,40 @@
         <!-- Dashboards -->
         <section class="panel" role="tabpanel" aria-labelledby="tab-dashboards" id="dashboards">
           <h2>KPIs & Dashboards — <span id="locLabel">Location A</span></h2>
-          <div class="grid cols-2" style="margin-top:12px">
-            <div class="kpi"><div class="label">Active Users</div><div class="value" id="kpiUsers">—</div></div>
-            <div class="kpi"><div class="label">Satisfaction</div><div class="value" id="kpiSat">—</div></div>
-          </div>
           <div class="iframe-wrap" style="margin-top:14px">
-            <iframe id="dashFrame"
-              src="https://public.tableau.com/views/CoffeeChainSalesDashboard_17563906444210/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-              title="Dashboard"
-              width="100%"
-              height="380"
-              frameborder="0"
-              allowfullscreen
-              style="background:#0b0c0f; border-radius:12px; border:var(--border);"></iframe>
-          </div>
-        </section>
+  <div class='tableauPlaceholder' id='viz1758044477822' style='position: relative'>
+    <noscript>
+      <a href='#'>
+        <img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/Co/CoffeeChainSalesDashboard_17563906444210/Dashboard1/1_rss.png' style='border: none' />
+      </a>
+    </noscript>
+    <object class='tableauViz' style='display:none;'>
+      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+      <param name='embed_code_version' value='3' />
+      <param name='site_root' value='' />
+      <param name='name' value='CoffeeChainSalesDashboard_17563906444210/Dashboard1' />
+      <param name='tabs' value='no' />
+      <param name='toolbar' value='yes' />
+      <param name='static_image' value='https://public.tableau.com/static/images/Co/CoffeeChainSalesDashboard_17563906444210/Dashboard1/1.png' />
+      <param name='animate_transition' value='yes' />
+      <param name='display_static_image' value='yes' />
+      <param name='display_spinner' value='yes' />
+      <param name='display_overlay' value='yes' />
+      <param name='display_count' value='yes' />
+      <param name='language' value='en-US' />
+    </object>
+  </div>
+  <script type='text/javascript'>
+    var divElement = document.getElementById('viz1758044477822');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';}
+    else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';}
+    else { vizElement.style.width='100%';vizElement.style.height='1127px';}
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+  </script>
+
 
         <!-- Training -->
         <section class="panel" role="tabpanel" aria-labelledby="tab-training" id="training" hidden>
@@ -268,7 +287,6 @@
       labels.forEach(id => document.getElementById(id).textContent = loc.label);
       document.getElementById('kpiUsers').textContent = loc.users.toLocaleString();
       document.getElementById('kpiSat').textContent = `${loc.sat.toFixed(1)} / 5.0`;
-      document.getElementById('dashFrame').src = loc.dashboardUrl;
     }
 
     // init
@@ -291,4 +309,5 @@
   </script>
 </body>
 </html>
+
 
