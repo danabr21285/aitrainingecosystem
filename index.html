@@ -158,27 +158,63 @@
    </script>
   </div>
 </section>
-        <!-- Training -->
-        <section class="panel" role="tabpanel" aria-labelledby="tab-training" id="training" hidden>
-          <h2>Training Hub — <span id="locLabel2">Location A</span></h2>
-          <p class="pill" style="margin:6px 0 14px">Multiple learning formats: video • step‑by‑step • interactive</p>
-          <div class="video-card">
-            <div class="video-thumb" aria-hidden="true">1280×720</div>
-            <div>
-              <strong>Quick Start (5 min)</strong>
-              <p class="muted">A short walkthrough covering navigation, role-based access, and where to find KPIs.</p>
-              <button class="btn" onclick="alert('https://www.youtube.com/shorts/OAFKbRntPAQ')">▶︎ Watch</button>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-thumb" aria-hidden="true">1280×720</div>
-            <div>
-              <strong>Deep Dive: Dashboards (12 min)</strong>
-              <p class="muted">Learn how to filter, export, and interpret each dashboard widget.</p>
-              <button class="btn" onclick="alert('https://www.youtube.com/shorts/N-GC9FYA8ug')">▶︎ Watch</button>
-            </div>
-          </div>
-        </section>
+       <!-- Training -->
+<section class="panel" role="tabpanel" aria-labelledby="tab-training" id="training" hidden>
+  <h2>Training Hub — <span id="locLabel2">Location A</span></h2>
+  <p class="pill" style="margin:6px 0 14px">Multiple learning formats: video • step‑by‑step • interactive</p>
+
+  <!-- Video Card 1 -->
+  <div class="video-card">
+    <div class="video-thumb" style="padding:0;overflow:hidden;width:140px;height:84px;">
+      <button style="padding:0;border:none;background:none;cursor:pointer;width:100%;height:100%;" onclick="showVideo('video1', 'OAFKbRntPAQ')">
+        <img src="https://img.youtube.com/vi/OAFKbRntPAQ/hqdefault.jpg" 
+             alt="Quick Start Thumbnail" 
+             style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+      </button>
+    </div>
+    <div>
+      <strong>Quick Start (5 min)</strong>
+      <p class="muted">A short walkthrough covering navigation, role-based access, and where to find KPIs.</p>
+      <button class="btn" onclick="showVideo('video1', 'OAFKbRntPAQ')">▶︎ Watch</button>
+      <div id="video1" style="display:none;margin-top:10px;">
+        <iframe width="320" height="180" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Card 2 -->
+  <div class="video-card">
+    <div class="video-thumb" style="padding:0;overflow:hidden;width:140px;height:84px;">
+      <button style="padding:0;border:none;background:none;cursor:pointer;width:100%;height:100%;" onclick="showVideo('video2', 'N-GC9FYA8ug')">
+        <img src="https://img.youtube.com/vi/N-GC9FYA8ug/hqdefault.jpg" 
+             alt="Deep Dive Thumbnail" 
+             style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+      </button>
+    </div>
+    <div>
+      <strong>Deep Dive: Dashboards (12 min)</strong>
+      <p class="muted">Learn how to filter, export, and interpret each dashboard widget.</p>
+      <button class="btn" onclick="showVideo('video2', 'N-GC9FYA8ug')">▶︎ Watch</button>
+      <div id="video2" style="display:none;margin-top:10px;">
+        <iframe width="320" height="180" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function showVideo(divId, youtubeId) {
+  // Hide all videos first (optional: only one open at a time)
+  document.querySelectorAll('.video-card div[id^="video"]').forEach(div => {
+    div.style.display = 'none';
+    if (div.querySelector('iframe')) div.querySelector('iframe').src = '';
+  });
+  // Show the selected video
+  var vidDiv = document.getElementById(divId);
+  vidDiv.style.display = 'block';
+  vidDiv.querySelector('iframe').src = "https://www.youtube.com/embed/" + youtubeId + "?autoplay=1";
+}
+</script>
 
         <!-- Docs -->
         <section class="panel" role="tabpanel" aria-labelledby="tab-docs" id="docs" hidden>
@@ -309,6 +345,7 @@
   </script>
 </body>
 </html>
+
 
 
 
