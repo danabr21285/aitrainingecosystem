@@ -65,7 +65,7 @@
     .kpi .value{font:800 22px/1.2 system-ui}
 
     .iframe-wrap{position:relative;border-radius:12px;overflow:hidden;border:var(--border)}
-    .iframe-wrap::after{content:"Add your dashboard embed URL in data/ or replace src=";position:absolute;inset:auto 8px 8px 8px;color:var(--muted);font-size:12px;text-align:right}
+    .iframe-wrap::after{position:absolute;inset:auto 8px 8px 8px;color:var(--muted);font-size:12px;text-align:right}
     iframe{width:100%;height:380px;border:0;background:#0b0c0f}
 
     .video-card{display:flex;gap:12px;align-items:center;border:var(--border);border-radius:12px;padding:12px}
@@ -161,7 +161,7 @@
        <!-- Training -->
 <section class="panel" role="tabpanel" aria-labelledby="tab-training" id="training" hidden>
   <h2>Training Hub — <span id="locLabel2">Location A</span></h2>
-  <p class="pill" style="margin:6px 0 14px">Multiple learning formats: video • step‑by‑step • interactive</p>
+  <p class="pill" style="margin:6px 0 14px">Video Trainings, Step-by-Step</p>
 
   <!-- Video Card 1 -->
   <div class="video-card">
@@ -223,15 +223,15 @@ function showVideo(divId, youtubeId) {
             <div>
               <h3>Playbooks</h3>
               <ul>
-                <li><a href="#" onclick="alert('Replace with playbook URL or file.')">Incident Response SOP</a></li>
-                <li><a href="#" onclick="alert('Replace with playbook URL or file.')">Quarterly Planning Guide</a></li>
+                <li><a href="#" onclick="alert('https://docs.google.com/document/d/1pvpzDhBTOaJVZWtETrPLbA8OrCgsSyCH1kffBzerhtY/edit?usp=sharing')">Incident Response SOP</a></li>
+                <li><a href="#" onclick="alert('https://docs.google.com/document/d/1n8ugI_zJ4M01RuDbSzKF9YwfRd8s9BQKEnSCgkhHoSg/edit?usp=sharing')">Quarterly Planning Guide</a></li>
               </ul>
             </div>
             <div>
               <h3>How‑tos</h3>
               <ul>
-                <li>Export a KPI snapshot for your region</li>
-                <li>Submit a change request</li>
+                <li> <li><a href="#" onclick="alert('https://docs.google.com/document/d/1wnJDBCNRNOOF37eLl51nofBBWNmycsUrxswRANE1omg/edit?usp=sharing')">Export a KPI snapshot for your region</a></li>
+                <li><a href="#" onclick="alert('https://docs.google.com/document/d/1Ss_dfVnaCM1h5uP4vFp-SeuQJ6T6UnR0jyziOsMysqQ/edit?usp=sharing')">Submit a change request</a></li>
               </ul>
             </div>
           </div>
@@ -345,6 +345,7 @@ function showVideo(divId, youtubeId) {
   </script>
 </body>
 </html>
+
 
 
 
