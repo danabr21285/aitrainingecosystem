@@ -6,13 +6,13 @@
   <title>AI-Powered Training & Onboarding Portal</title>
   <style>
     :root{
-      --bg: #0b0c0f; /* dark by default for eye comfort */
+      --bg: #0b0c0f;
       --panel: #14161b;
       --text: #e9edf1;
       --muted: #9aa4b2;
-      --brand: #6ee7b7; /* mint */
-      --brand-2: #60a5fa; /* blue */
-      --accent: #fbbf24; /* amber */
+      --brand: #6ee7b7;
+      --brand-2: #60a5fa;
+      --accent: #fbbf24;
       --danger: #ef4444;
       --radius: 16px;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
@@ -123,134 +123,139 @@
         <!-- Dashboards -->
         <section class="panel" role="tabpanel" aria-labelledby="tab-dashboards" id="dashboards">
           <h2>KPIs & Dashboards — <span id="locLabel">Location A</span></h2>
+          <div class="kpi-grid grid cols-2" style="margin-bottom:18px;">
+            <div class="kpi">
+              <span class="label">Active Users</span>
+              <span class="value" id="kpiUsers">–</span>
+            </div>
+            <div class="kpi">
+              <span class="label">Satisfaction</span>
+              <span class="value" id="kpiSat">–</span>
+            </div>
+          </div>
           <div class="iframe-wrap" style="margin-top:14px">
-  <div class='tableauPlaceholder' id='viz1758044477822' style='position: relative'>
-    <noscript>
-      <a href='#'>
-        <img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/Co/CoffeeChainSalesDashboard_17563906444210/Dashboard1/1_rss.png' style='border: none' />
-      </a>
-    </noscript>
-    <object class='tableauViz' style='display:none;'>
-      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-      <param name='embed_code_version' value='3' />
-      <param name='site_root' value='' />
-      <param name='name' value='CoffeeChainSalesDashboard_17563906444210/Dashboard1' />
-      <param name='tabs' value='no' />
-      <param name='toolbar' value='yes' />
-      <param name='static_image' value='https://public.tableau.com/static/images/Co/CoffeeChainSalesDashboard_17563906444210/Dashboard1/1.png' />
-      <param name='animate_transition' value='yes' />
-      <param name='display_static_image' value='yes' />
-      <param name='display_spinner' value='yes' />
-      <param name='display_overlay' value='yes' />
-      <param name='display_count' value='yes' />
-      <param name='language' value='en-US' />
-    </object>
-  </div>
-  <script type='text/javascript'>
-    var divElement = document.getElementById('viz1758044477822');
-    var vizElement = divElement.getElementsByTagName('object')[0];
-    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';}
-    else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';}
-    else { vizElement.style.width='100%';vizElement.style.height='1127px';}
-    var scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-   </script>
-  </div>
-</section>
-       <!-- Training -->
-<section class="panel" role="tabpanel" aria-labelledby="tab-training" id="training" hidden>
-  <h2>Training Hub — <span id="locLabel2">Location A</span></h2>
-  <p class="pill" style="margin:6px 0 14px">Video Trainings, Step-by-Step</p>
-
-  <!-- Video Card 1 -->
-  <div class="video-card">
-    <div class="video-thumb" style="padding:0;overflow:hidden;width:140px;height:84px;">
-      <button style="padding:0;border:none;background:none;cursor:pointer;width:100%;height:100%;" onclick="showVideo('video1', 'OAFKbRntPAQ')">
-        <img src="https://img.youtube.com/vi/OAFKbRntPAQ/hqdefault.jpg" 
-             alt="Quick Start Thumbnail" 
-             style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
-      </button>
-    </div>
-    <div>
-      <strong>Quick Start (5 min)</strong>
-      <p class="muted">A short walkthrough covering navigation, role-based access, and where to find KPIs.</p>
-      <button class="btn" onclick="showVideo('video1', 'OAFKbRntPAQ')">▶︎ Watch</button>
-      <div id="video1" style="display:none;margin-top:10px;">
-        <iframe width="320" height="180" src="" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <!-- Video Card 2 -->
-  <div class="video-card">
-    <div class="video-thumb" style="padding:0;overflow:hidden;width:140px;height:84px;">
-      <button style="padding:0;border:none;background:none;cursor:pointer;width:100%;height:100%;" onclick="showVideo('video2', 'N-GC9FYA8ug')">
-        <img src="https://img.youtube.com/vi/N-GC9FYA8ug/hqdefault.jpg" 
-             alt="Deep Dive Thumbnail" 
-             style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
-      </button>
-    </div>
-    <div>
-      <strong>Deep Dive: Dashboards (12 min)</strong>
-      <p class="muted">Learn how to filter, export, and interpret each dashboard widget.</p>
-      <button class="btn" onclick="showVideo('video2', 'N-GC9FYA8ug')">▶︎ Watch</button>
-      <div id="video2" style="display:none;margin-top:10px;">
-        <iframe width="320" height="180" src="" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script>
-function showVideo(divId, youtubeId) {
-  // Hide all videos first (optional: only one open at a time)
-  document.querySelectorAll('.video-card div[id^="video"]').forEach(div => {
-    div.style.display = 'none';
-    if (div.querySelector('iframe')) div.querySelector('iframe').src = '';
-  });
-  // Show the selected video
-  var vidDiv = document.getElementById(divId);
-  vidDiv.style.display = 'block';
-  vidDiv.querySelector('iframe').src = "https://www.youtube.com/embed/" + youtubeId + "?autoplay=1";
-}
-</script>
-
+            <div class='tableauPlaceholder' id='viz1758044477822' style='position: relative'>
+              <noscript>
+                <a href='#'>
+                  <img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/Co/CoffeeChainSalesDashboard_17563906444210/Dashboard1/1_rss.png' style='border: none' />
+                </a>
+              </noscript>
+              <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='CoffeeChainSalesDashboard_17563906444210/Dashboard1' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://public.tableau.com/static/images/Co/CoffeeChainSalesDashboard_17563906444210/Dashboard1/1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+              </object>
+            </div>
+            <script type='text/javascript'>
+              var divElement = document.getElementById('viz1758044477822');
+              var vizElement = divElement.getElementsByTagName('object')[0];
+              if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';}
+              else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';}
+              else { vizElement.style.width='100%';vizElement.style.height='1127px';}
+              var scriptElement = document.createElement('script');
+              scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+              vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+          </div>
+        </section>
+        <!-- Training -->
+        <section class="panel" role="tabpanel" aria-labelledby="tab-training" id="training" hidden>
+          <h2>Training Hub — <span id="locLabel2">Location A</span></h2>
+          <p class="pill" style="margin:6px 0 14px">Video Trainings, Step-by-Step</p>
+          <!-- Video Card 1 -->
+          <div class="video-card">
+            <div class="video-thumb" style="padding:0;overflow:hidden;width:140px;height:84px;">
+              <button style="padding:0;border:none;background:none;cursor:pointer;width:100%;height:100%;" onclick="showVideo('video1', 'OAFKbRntPAQ')">
+                <img src="https://img.youtube.com/vi/OAFKbRntPAQ/hqdefault.jpg" 
+                  alt="Quick Start Thumbnail" 
+                  style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+              </button>
+            </div>
+            <div>
+              <strong>Quick Start (5 min)</strong>
+              <p class="muted">A short walkthrough covering navigation, role-based access, and where to find KPIs.</p>
+              <button class="btn" onclick="showVideo('video1', 'OAFKbRntPAQ')">▶︎ Watch</button>
+              <div id="video1" style="display:none;margin-top:10px;">
+                <iframe width="320" height="180" src="" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+          <!-- Video Card 2 -->
+          <div class="video-card">
+            <div class="video-thumb" style="padding:0;overflow:hidden;width:140px;height:84px;">
+              <button style="padding:0;border:none;background:none;cursor:pointer;width:100%;height:100%;" onclick="showVideo('video2', 'N-GC9FYA8ug')">
+                <img src="https://img.youtube.com/vi/N-GC9FYA8ug/hqdefault.jpg" 
+                  alt="Deep Dive Thumbnail" 
+                  style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+              </button>
+            </div>
+            <div>
+              <strong>Deep Dive: Dashboards (12 min)</strong>
+              <p class="muted">Learn how to filter, export, and interpret each dashboard widget.</p>
+              <button class="btn" onclick="showVideo('video2', 'N-GC9FYA8ug')">▶︎ Watch</button>
+              <div id="video2" style="display:none;margin-top:10px;">
+                <iframe width="320" height="180" src="" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+        <script>
+        function showVideo(divId, youtubeId) {
+          document.querySelectorAll('.video-card div[id^="video"]').forEach(div => {
+            div.style.display = 'none';
+            if (div.querySelector('iframe')) div.querySelector('iframe').src = '';
+          });
+          var vidDiv = document.getElementById(divId);
+          vidDiv.style.display = 'block';
+          vidDiv.querySelector('iframe').src = "https://www.youtube.com/embed/" + youtubeId + "?autoplay=1";
+        }
+        </script>
         <!-- Docs -->
         <section class="panel" role="tabpanel" aria-labelledby="tab-docs" id="docs" hidden>
           <h2>Documentation — <span id="locLabel3">Location A</span></h2>
           <div class="grid">
             <div>
               <h3>Playbooks</h3>
-<ul>
-  <li>
-    <a href="https://docs.google.com/document/d/1pvpzDhBTOaJVZWtETrPLbA8OrCgsSyCH1kffBzerhtY/edit?usp=sharing" target="_blank" rel="noopener">
-      Incident Response SOP
-    </a>
-  </li>
-  <li>
-    <a href="https://docs.google.com/document/d/1n8ugI_zJ4M01RuDbSzKF9YwfRd8s9BQKEnSCgkhHoSg/edit?usp=sharing" target="_blank" rel="noopener">
-      Quarterly Planning Guide
-    </a>
-  </li>
-</ul>
-</div>
-<div>
-  <h3>How‑tos</h3>
-  <ul>
-    <li>
-      <a href="https://docs.google.com/document/d/1wnJDBCNRNOOF37eLl51nofBBWNmycsUrxswRANE1omg/edit?usp=sharing" target="_blank" rel="noopener">
-        Export a KPI snapshot for your region
-      </a>
-    </li>
-    <li>
-      <a href="https://docs.google.com/document/d/1Ss_dfVnaCM1h5uP4vFp-SeuQJ6T6UnR0jyziOsMysqQ/edit?usp=sharing" target="_blank" rel="noopener">
-        Submit a change request
-      </a>
-    </li>
-  </ul>
-</div>
-</script>
+              <ul>
+                <li>
+                  <a href="https://docs.google.com/document/d/1pvpzDhBTOaJVZWtETrPLbA8OrCgsSyCH1kffBzerhtY/edit?usp=sharing" target="_blank" rel="noopener">
+                    Incident Response SOP
+                  </a>
+                </li>
+                <li>
+                  <a href="https://docs.google.com/document/d/1n8ugI_zJ4M01RuDbSzKF9YwfRd8s9BQKEnSCgkhHoSg/edit?usp=sharing" target="_blank" rel="noopener">
+                    Quarterly Planning Guide
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3>How‑tos</h3>
+              <ul>
+                <li>
+                  <a href="https://docs.google.com/document/d/1wnJDBCNRNOOF37eLl51nofBBWNmycsUrxswRANE1omg/edit?usp=sharing" target="_blank" rel="noopener">
+                    Export a KPI snapshot for your region
+                  </a>
+                </li>
+                <li>
+                  <a href="https://docs.google.com/document/d/1Ss_dfVnaCM1h5uP4vFp-SeuQJ6T6UnR0jyziOsMysqQ/edit?usp=sharing" target="_blank" rel="noopener">
+                    Submit a change request
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
         <!-- Assistant -->
         <section class="panel" role="tabpanel" aria-labelledby="tab-assistant" id="assistant" hidden>
           <h2>AI Assistant — <span id="locLabel4">Location A</span></h2>
@@ -271,12 +276,10 @@ function showVideo(divId, youtubeId) {
         </section>
       </main>
     </div>
-
     <footer>
       Built as a static demo (no backend required).
     </footer>
   </div>
-
   <script>
     // --- Demo data (would normally come from a JSON file or API) ---
     const DATA = {
@@ -331,31 +334,31 @@ function showVideo(divId, youtubeId) {
     const locSelect = document.getElementById('location');
     const labels = ['locLabel','locLabel2','locLabel3','locLabel4'];
     locSelect.addEventListener('change', () => applyLocation(locSelect.value));
-
     function applyLocation(key){
       const loc = DATA.locations[key];
       labels.forEach(id => document.getElementById(id).textContent = loc.label);
       document.getElementById('kpiUsers').textContent = loc.users.toLocaleString();
       document.getElementById('kpiSat').textContent = `${loc.sat.toFixed(1)} / 5.0`;
     }
-
     // init
     applyLocation('A');
 
     // --- Assistant (mock, no backend) ---
     const runBtn = document.getElementById('run');
-    runBtn.addEventListener('click', () => {
-      const key = locSelect.value; const loc = DATA.locations[key];
-      const tone = document.getElementById('temp').value;
-      const prompt = (document.getElementById('prompt').value || '').trim();
-      const base = `Summary for ${loc.label}: Active users ${loc.users}, satisfaction ${loc.sat.toFixed(1)}.\n`;
-      const toneLine = tone === 'executive' ? 'Action: focus on high-impact items for this quarter.'
-                      : tone === 'coaching' ? 'Action: small weekly improvements compounded over time will move the KPI.'
-                      : 'Action: review the dashboard and align on next steps.';
-      const echo = prompt ? `\nYou asked: "${prompt}"` : '';
-      const recs = `\nRecommendations:\n• Prioritize top 3 blockers.\n• Capture a KPI snapshot after changes.\n• Share update in the portal.`;
-      document.getElementById('output').textContent = base + toneLine + echo + recs + "\n\n(Connect a real model by calling your API in this handler.)";
-    });
+    if(runBtn){
+      runBtn.addEventListener('click', () => {
+        const key = locSelect.value; const loc = DATA.locations[key];
+        const tone = document.getElementById('temp').value;
+        const prompt = (document.getElementById('prompt').value || '').trim();
+        const base = `Summary for ${loc.label}: Active users ${loc.users}, satisfaction ${loc.sat.toFixed(1)}.\n`;
+        const toneLine = tone === 'executive' ? 'Action: focus on high-impact items for this quarter.'
+                        : tone === 'coaching' ? 'Action: small weekly improvements compounded over time will move the KPI.'
+                        : 'Action: review the dashboard and align on next steps.';
+        const echo = prompt ? `\nYou asked: "${prompt}"` : '';
+        const recs = `\nRecommendations:\n• Prioritize top 3 blockers.\n• Capture a KPI snapshot after changes.\n• Share update in the portal.`;
+        document.getElementById('output').textContent = base + toneLine + echo + recs + "\n\n(Connect a real model by calling your API in this handler.)";
+      });
+    }
   </script>
 </body>
 </html>
